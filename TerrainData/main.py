@@ -32,6 +32,13 @@ bumpy_slow = [features_train[ii][1] for ii in range(0, len(features_train)) if l
 # Be sure to change to that code tab to complete this quiz.
 clf = classify(features_train, labels_train)
 
+# Here I am just calculating the accuracy of the classifier 
+#1: by comparing the results:
+pred= clf.predict(features_train)
+dif = abs(pred-labels_train)
+accuracy=1-sum(dif)/len(labels_train)
+print len(labels_train)
+print accuracy
 
 
 ### draw the decision boundary with the text points overlaid
