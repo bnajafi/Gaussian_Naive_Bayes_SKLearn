@@ -8,7 +8,7 @@
     visually shows the decision boundary """
 
 import os
-os.chdir("C:/Users/behzad/Dropbox/Udacity_MachineLearning/GausianNB/Gaussian_Naive_Bayes_SKLearn/TerrainData")
+os.chdir("C:/Users/behzad/Dropbox/_7_EduMaterial_PYTHON_MachineLearing/Classification/Gaussian_Naive_Bayes_SKLearn/TerrainData")
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture, output_image
 from classifyNB import classify
@@ -34,10 +34,10 @@ clf = classify(features_train, labels_train)
 
 # Here I am just calculating the accuracy of the classifier 
 #1: by comparing the results:
-pred= clf.predict(features_train)
-dif = abs(pred-labels_train)
-accuracy=1-sum(dif)/len(labels_train)
-print len(labels_train)
+pred= clf.predict(features_test)
+dif = abs(pred-labels_test)
+accuracy=1-sum(dif)/len(labels_test)
+print len(labels_test)
 print accuracy
 
 
