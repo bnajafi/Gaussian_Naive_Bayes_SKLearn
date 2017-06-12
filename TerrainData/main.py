@@ -12,6 +12,7 @@ os.chdir("C:/Users/behzad/Dropbox/_7_EduMaterial_PYTHON_MachineLearing/Classific
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture, output_image
 from classifyNB import classify
+from sklearn.metrics import accuracy_score
 
 import numpy as np
 import pylab as pl
@@ -39,6 +40,14 @@ dif = abs(pred-labels_test)
 accuracy=1-sum(dif)/len(labels_test)
 print len(labels_test)
 print accuracy
+
+# The second Method of accuracy is to use the score function of Sklearn
+accuracy2=clf.score(features_test,labels_test)
+print("the accuracy using the Sklearn builtin score function is: "+str(accuracy2))
+
+#the 3rd way is using th sklearn metric module and the function accuracy_score
+accuracy3 = accuracy_score(pred,labels_test)
+print("the accuracy using the Sklearn metric's builtin accuracy_score function is: " + str(accuracy3))
 
 
 ### draw the decision boundary with the text points overlaid
